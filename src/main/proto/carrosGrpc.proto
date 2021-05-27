@@ -7,14 +7,15 @@ option objc_class_prefix = "HLW";
 
 package br.com.zup.ot4;
 
-service CarrosService {
-  rpc send (CarrosRequest) returns (CarrosReply) {}
+service CarrosGrpcService {
+  rpc adicionar (CarroRequest) returns (CarroResponse) {}
 }
 
-message CarrosRequest {
-  string name = 1;
+message CarroRequest {
+  string modelo = 1;
+  string placa = 2;
 }
 
-message CarrosReply {
-  string message = 1;
+message CarroResponse {
+  int64 id = 1;
 }
